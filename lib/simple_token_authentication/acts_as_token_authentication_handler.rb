@@ -135,7 +135,7 @@ module SimpleTokenAuthentication
 
           def authenticate_#{entity_underscored}_from_token!
             authenticate_entity_from_token!(#{entity_class.name})
-            authenticate_entity!(#{entity_class.name})
+            authenticate_entitya!(#{entity_class.name})
           end
         METHODS
       end
