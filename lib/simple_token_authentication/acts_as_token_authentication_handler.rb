@@ -6,7 +6,7 @@ module SimpleTokenAuthentication
     # before editing this file, the discussion is very interesting.
 
     included do
-      private :authenticate_entity_from_token!
+      private :authenticate_entitya_from_token!
       private :header_token_name
       private :header_parameter_name
 
@@ -17,7 +17,7 @@ module SimpleTokenAuthentication
       ActionController::API.send :include, Devise::Controllers::SignInOut if Rails.env.test? && defined?(ActionController::API)
     end
 
-    def authenticate_entity!(entity_class)
+    def authenticate_entitya!(entity_class)
       # Caution: entity should be a singular camel-cased name but could be pluralized or underscored.
       self.method("authenticate_#{entity_class.name.singularize.underscore}!".to_sym).call
     end
@@ -26,7 +26,7 @@ module SimpleTokenAuthentication
     # For this example, we are simply using token authentication
     # via parameters. However, anyone could use Rails's token
     # authentication features to get the token from a header.
-    def authenticate_entity_from_token!(entity_class)
+    def authenticate_entitya_from_token!(entity_class)
       parameter_name = auth_parameter_name(entity_class)
       # Set the authentication token params if not already present,
       # see http://stackoverflow.com/questions/11017348/rails-api-authentication-by-headers-token
